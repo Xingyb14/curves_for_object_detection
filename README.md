@@ -10,15 +10,24 @@
 ## 2 输入
 
 &emsp;&emsp;本程序需要读入两个分别记录检测结果和标准答案的 .txt 文件，记录格式与 FDDB 的要求相同，即
+
 `... `
+
 `image name i `
+
 `number of faces in this image =im `
+
 `face i1 `
+
 `face i2 `
+
 `... `
+
 `face im `
+
 `... `
-当检测框为矩形时，$face\ i_m$ 为`左上角x 左上角y 宽 高 分数`  
+
+当检测框为矩形时，facei 为`左上角x 左上角y 宽 高 分数`  
 当检测框为椭圆时，格式需要为`长轴半径 短轴半径 角度 中心点x 中心点y 分数`
 
 ## 3 测试结果
