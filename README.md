@@ -32,7 +32,7 @@
 
 ## 3 测试结果
 
-&emsp;&emsp;利用本程序在 FDDB 上测试了人脸检测模型，绘制出的 ROC 曲线和 PR 曲线如图所示。可以看出此模型误检率很低，但召回率不够高。
+&emsp;&emsp;利用本程序在 FDDB 上测试了一个人脸检测模型，绘制出的 ROC 曲线和 PR 曲线如图所示。可以看出此模型误检率很低，但召回率不够高。
 
 ![ROC](https://raw.githubusercontent.com/Xingyb14/My_image_hosting_site/master/mtcnn_roc.png)
 
