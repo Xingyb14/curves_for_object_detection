@@ -38,4 +38,4 @@
 
 ![PR](https://raw.githubusercontent.com/Xingyb14/My_image_hosting_site/master/mtcnn_pr.png)
 
-[更多说明](https://blog.csdn.net/Xingyb14/article/details/81329833)
+[更多说明](https://blog.csdn.net/Xingyb14/article/details/81434087)
