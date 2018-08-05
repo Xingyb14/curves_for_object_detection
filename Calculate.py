@@ -5,8 +5,8 @@ import cv2
 
 
 def match(resultsfile, groundtruthfile):
-    results, num_detectedbox = load("results.txt")
-    groundtruth, num_groundtruthbox = load("ellipseList.txt")
+    results, num_detectedbox = load(resultsfile)
+    groundtruth, num_groundtruthbox = load(groundtruthfile)
 
     assert len(results) == len(groundtruth), "数量不匹配: groundtruth中图片数量为%d，而检测结果中图片数量为%d" % (
     len(groundtruth), len(results))
@@ -56,7 +56,7 @@ def plot(x_confidence, num_groundtruthbox):
     recall_list = []
     precision_list = []
     for num in range(len(x_confidence)):
-        arr = x_confidence[:(num + 1), 0]# 注意要加1,
+        arr = x_confidence[:(num + 1), 0]# 注意要加1
         tp = np.sum(arr)
         fp = np.sum(arr == 0)
         recall = tp / num_groundtruthbox
