@@ -5,7 +5,7 @@
 为目标检测任务绘制曲线的流程如下：
 1. **以检测结果中每一个的 boundingbox 为对象**(记检测出的 boundingbox 的个数为 M)，去匹配该张图片里的每一个 groundtruth boundingbox，计算出交并比 (IoU)，并保留其中最大的值—— maxIoU，同时记录下 confidence 分数。就得到了一个数组—— **maxIoU_confidence，其长度等于 M，宽度为 2**，再按照 confidence 从大到小排序。
 2. 设置一个阈值，一般取 0.5。当 maxIoU 大于阈值时，记为 1，即 true positive；当 maxIoU 小于阈值时，记为 0，即 false positve。这样就得到了 **tf_confidence**，其尺寸不变，与 maxIoU_confidence 相同。
-3. **从上到下截取数组 tf_confidence 的前 1，2，3，…，M 行**，每次截取都得到一个子数组，子数组中 1 的个数即为 tp，0 的个数即为 fp，查全率 recall = tp / (groundtruth boundingbox 的个数)，查准率 precision / TPR = tp / (tp + fp)。**每次截取得到一个点**，这样就一共得到 M 个点。以 fp 为横坐标，TPR 为纵坐标绘制出 ROC 曲线；以 recall 为横坐标，precision 为纵坐标绘制出 PR 曲线。
+3. **从上到下截取数组 tf_confidence 的前 1，2，3，…，M 行**，每次截取都得到一个子数组，子数组中 1 的个数即为 tp，0 的个数即为 fp，查全率 recall (或 TPR) = tp / (groundtruth boundingbox 的个数)，查准率 precision = tp / (tp + fp)。**每次截取得到一个点**，这样就一共得到 M 个点。以 fp 为横坐标，TPR 为纵坐标绘制出 ROC 曲线；以 recall 为横坐标，precision 为纵坐标绘制出 PR 曲线。
 
 ## 2 输入
 
